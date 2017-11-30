@@ -18,7 +18,7 @@ public class Photo {
     private Integer id;
     private String urls;
     //照片集名字
-    private String name = "unnamed";
+    private String title = "unnamed";
     //浏览数
 //    @Column(columnDefinition = "I")
     private Integer viewNum = 0;

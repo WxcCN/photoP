@@ -45,45 +45,7 @@ public class MainpageController {
         return photoRepositorym.findOne(id);
     }
 
-    //插入一个照片集
-    @PostMapping(value = "/manage/photo")
-    public String photoAdd(@RequestParam(value = "name", required = false) String name,
-                           @RequestParam("url") String url) {
-        Photo photo = new Photo();
-        photo.setUrls(url);
-        photo.setName(name);
-        photo = photoRepositorym.save(photo);
-        if (null != photo)
-            return "success: id=" + photo.getId();
-        else return "hehe";
-    }
 
-    //删除
-    @DeleteMapping(value = "/manage/photo/{id}")
-    public String photoDel(@PathVariable("id") Integer id) {
-        try {
-            photoRepositorym.delete(id);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return "success";
-    }
-
-
-    //更新
-    @PutMapping(value = "/manage/photo/{id}")
-    public String photoUpdat(@PathVariable("id") Integer id,
-                             @RequestParam(value = "name", required = false) String name,
-                             @RequestParam("url") String url) {
-        Photo photo = new Photo();
-        photo.setId(id);
-        photo.setUrls(url);
-        photo.setName(name);
-        photo = photoRepositorym.save(photo);
-        if (null != photo)
-            return "success: id=" + photo.getId();
-        else return "hehe";
-    }
 
 
 }

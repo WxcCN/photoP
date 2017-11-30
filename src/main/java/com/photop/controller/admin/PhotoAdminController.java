@@ -20,7 +20,7 @@ public class PhotoAdminController {
                            @RequestParam("url") String url) {
         Photo photo = new Photo();
         photo.setUrls(url);
-        photo.setName(name);
+        photo.setTitle(name);
         photo = photoRepositorym.save(photo);
         if (null != photo)
             return "success: id=" + photo.getId();
@@ -47,7 +47,7 @@ public class PhotoAdminController {
         Photo photo = new Photo();
         photo.setId(id);
         photo.setUrls(url);
-        photo.setName(name);
+        photo.setTitle(name);
         photo = photoRepositorym.save(photo);
         if (null != photo)
             return "success: id=" + photo.getId();

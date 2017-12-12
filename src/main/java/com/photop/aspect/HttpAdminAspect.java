@@ -1,6 +1,5 @@
 package com.photop.aspect;
 
-import ch.qos.logback.core.net.SyslogOutputStream;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -18,9 +17,9 @@ import javax.servlet.http.HttpServletRequest;
  */
 @Aspect
 @Component
-public class HttpAspect {
+public class HttpAdminAspect {
 
-   private final static Logger logger = LoggerFactory.getLogger(HttpAspect.class) ;
+   private final static Logger logger = LoggerFactory.getLogger(HttpAdminAspect.class) ;
 
     @Pointcut("execution (public * com.photop.controller.admin.*.*(..))")
     public void login(){
